@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: argocd
+  annotations:
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: quantumleap
+  name: quantumleap
+spec:
+  path: quantumleap
+    repoURL: https://github.com/AntonioUzal-CSIC/Arquitectura.git
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: quantumleap
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/default: "true"
+        io.kompose.service: quantumleap
+    spec:
+      containers:
+        - env:
+            - name: CACHE_QUERIES
+              value: "True"
+            - name: LOGLEVEL
+              value: ERROR
+            - name: POSTGRES_DB_NAME
+              value: quantumleap
+            - name: POSTGRES_DB_PASS
+              value: '*'
+            - name: POSTGRES_DB_USER
+              value: quantumleap
+            - name: POSTGRES_HOST
+              value: timescale
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_USE_SSL
+              value: "False"
+            - name: QL_DEFAULT_DB
+              value: timescale
+            - name: REDIS_HOST
+              value: redis
+            - name: REDIS_PORT
+              value: "6379"
+            - name: USE_GEOCODING
+              value: "False"
+          image: orchestracities/quantumleap
+          name: quantumleap
+          ports:
+            - containerPort: 8668
+          resources: {}
+      restartPolicy: Always
+status: {}
