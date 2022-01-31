@@ -1,0 +1,17 @@
+{
+  "name": "context-provider",
+  "version": "1.0.0",
+  "description": "Prueba de un servidor de contexto",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "context"
+  ],
+  "author": "Carlos Moro García",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

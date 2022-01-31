@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: timescale
+  name: timescale
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: timescale
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: timescale
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_PASSWORD
+              value: '*'
+          image: timescale/timescaledb-postgis:1.7.5-pg12
+          name: postgre-timescale
+          ports:
+            - containerPort: 5432
+          resources: {}
+          volumeMounts:
+            - mountPath: /data
+              name: timescale
+      restartPolicy: Always
+      volumes:
+        - name: timescale
+          persistentVolumeClaim:
+            claimName: timescale
+status: {}
