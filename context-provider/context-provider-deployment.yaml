@@ -25,7 +25,7 @@ spec:
         - image: context-provider
           name: fiware-context-provider2
           ports:
-            - containerPort: 3000
+            - containerPort: 3005
           resources: {}
       hostname: context-provider
       restartPolicy: Always
