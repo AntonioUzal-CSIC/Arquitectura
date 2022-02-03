@@ -23,7 +23,7 @@ spec:
         io.kompose.service: mongo-db
     spec:
       containers:
-        - image: 'mongo:'
+        - image: 'mongo'
           livenessProbe:
             exec:
               command:
