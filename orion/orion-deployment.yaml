@@ -31,11 +31,11 @@ spec:
             - DEBUG
             - -forwarding
           image: 'fiware/orion-ld'
-          livenessProbe:
-            exec:
-              command:
-                - curl --fail -s http://orion:/version || exit 1
-            periodSeconds: 5
+#          livenessProbe:
+#            exec:
+#              command:
+#                - curl --fail -s http://orion:/version || exit 1
+#            periodSeconds: 5
           name: fiware-orion
           ports:
             - containerPort: 1026
