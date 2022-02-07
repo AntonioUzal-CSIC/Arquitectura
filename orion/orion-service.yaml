@@ -8,12 +8,12 @@ metadata:
     io.kompose.service: orion
   name: orion
 spec:
-  type: NodePort
+# type: NodePort
   ports:
     - name: "1026"
       port: 1026
       targetPort: 1026
-      nodePort: 30000 # Is necessary to specify a port greater than or equal to 30000.
+ #    nodePort: 30000 # Is necessary to specify a port greater than or equal to 30000.
   selector:
     io.kompose.service: orion
 status:
