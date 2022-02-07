@@ -25,7 +25,7 @@ spec:
       containers:
         - env:
             - name: PG_HOST
-              value: 172.17.0.14 #timescale
+              value: timescale
             - name: PG_PASS
               value: '*'
             - name: QL_DB_INIT_DIR

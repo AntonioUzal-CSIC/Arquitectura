@@ -34,7 +34,7 @@ spec:
             - name: POSTGRES_DB_USER
               value: quantumleap
             - name: POSTGRES_HOST
-              value: 172.17.0.14 #timescale
+              value: timescale
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_USE_SSL

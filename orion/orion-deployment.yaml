@@ -26,7 +26,7 @@ spec:
             - -corsOrigin
             - __ALL
             - -dbhost
-            - 172.17.0.12 #mongo-db
+            - mongo-db
             - -logLevel
             - DEBUG
             - -forwarding
