@@ -8,10 +8,12 @@ metadata:
     io.kompose.service: orion
   name: orion
 spec:
+  type: NodePort
   ports:
     - name: "1026"
       port: 1026
       targetPort: 1026
+      nodePort: 1026
   selector:
     io.kompose.service: orion
 status:
