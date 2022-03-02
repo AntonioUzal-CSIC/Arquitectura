@@ -5,7 +5,7 @@ metadata:
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: grafana
+    app: grafana
   name: grafana
 spec:
   ports:
@@ -13,6 +13,6 @@ spec:
       port: 3003
       targetPort: 3000
   selector:
-    io.kompose.service: grafana
+    app: grafana
 status:
   loadBalancer: {}
