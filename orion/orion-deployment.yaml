@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+metadata:
   creationTimestamp: null
   labels:
     app: orion
@@ -14,7 +15,6 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        network/default: "true"
         app: orion
     spec:
       containers:
