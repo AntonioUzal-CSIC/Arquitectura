@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: mongo-db
+    app: mongo-db
   name: mongo-db
 spec:
   accessModes:

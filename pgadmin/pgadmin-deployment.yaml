@@ -1,26 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: pgadmin
+    app: pgadmin
   name: pgadmin
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: pgadmin
+      app: pgadmin
   strategy:
     type: Recreate
   template:
     metadata:
-      annotations:
-        kompose.version: 1.26.1 (a9d05d509)
       creationTimestamp: null
       labels:
-        io.kompose.service: pgadmin
+        app: pgadmin
     spec:
       containers:
         - env:
