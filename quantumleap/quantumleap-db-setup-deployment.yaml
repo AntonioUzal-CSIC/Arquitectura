@@ -15,7 +15,6 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        network/default: "true"
         app: quantumleap-db-setup
     spec:
       containers:
