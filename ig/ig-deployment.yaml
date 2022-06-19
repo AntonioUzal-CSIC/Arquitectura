@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ig
+  name: ig
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ig
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+        - image: ig
+          name: ig-container
+          ports:
+            - containerPort: 8000
+          resources: {}
+      hostname: ig
+      restartPolicy: Always
+status: {}
