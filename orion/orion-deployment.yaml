@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: orion
+  name: orion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orion
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: orion
+    spec:
+      containers:
+        - args:
+            - -corsOrigin
+            - __ALL
+            - -dbhost
+            - mongo-db
+            - -logLevel
+            - DEBUG
+            - -forwarding
+          image: 'fiware/orion-ld'
+#          livenessProbe:
+#            exec:
+#              command:
+#                - curl --fail -s http://orion:/version || exit 1
+#            periodSeconds: 5
+          name: fiware-orion
+          ports:
+            - containerPort: 1026
+          resources: {}
+      hostname: orion
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: quantumleap
+  name: quantumleap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quantumleap
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: quantumleap
+    spec:
+      containers:
+        - env:
+            - name: CACHE_QUERIES
+              value: "True"
+            - name: LOGLEVEL
+              value: ERROR
+            - name: POSTGRES_DB_NAME
+              value: quantumleap
+            - name: POSTGRES_DB_PASS
+              value: '*'
+            - name: POSTGRES_DB_USER
+              value: quantumleap
+            - name: POSTGRES_HOST
+              value: timescale
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_USE_SSL
+              value: "False"
+            - name: QL_DEFAULT_DB
+              value: timescale
+            - name: REDIS_HOST
+              value: redis
+            - name: REDIS_PORT
+              value: "6379"
+            - name: USE_GEOCODING
+              value: "False"
+          image: orchestracities/quantumleap
+          name: quantumleap
+          ports:
+            - containerPort: 8668
+          resources: {}
+      restartPolicy: Always
+status: {}
