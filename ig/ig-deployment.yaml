@@ -14,13 +14,15 @@ spec:
   template:
     metadata:
       creationTimestamp: null
+      labels:
+        app: ig
     spec:
       containers:
         - image: ig
-          name: ig-container
+          name: insight-generator
           ports:
-            - containerPort: 8000
+            - containerPort: 8010
           resources: {}
-      hostname: ig
+      hostname: insight-generator
       restartPolicy: Always
 status: {}

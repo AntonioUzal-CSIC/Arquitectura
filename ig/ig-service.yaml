@@ -7,12 +7,12 @@ metadata:
   name: ig
 spec:
   ports:
-    - name: "8000"
-      port: 8000
-      targetPort: 8000
-    - name: 8000-tcp
-      port: 8000
-      targetPort: 8000
+    - name: "8010"
+      port: 8010
+      targetPort: 8010
+    - name: 8010-tcp
+      port: 8010
+      targetPort: 8010
   selector:
     app: ig
 status:
