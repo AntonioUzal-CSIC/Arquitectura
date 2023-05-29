@@ -10,9 +10,9 @@ spec:
     - name: "8010"
       port: 8010
       targetPort: 8010
-    - name: 8010-tcp
-      port: 8010
-      targetPort: 8010
+#    - name: 8010-tcp
+#      port: 8010
+#      targetPort: 8010
   selector:
     app: ig
 status:
