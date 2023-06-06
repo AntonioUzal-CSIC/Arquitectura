@@ -19,17 +19,17 @@ spec:
     spec:
       containers:
       - command: ["orionld"]
-        args: ["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongo-db",
-               "-logLevel", "DEBUG"]
-          #  - -corsOrigin
-          # - __ALL
-          # - -dbhost
-          # - mongo-db
-          #- -logLevel
-          # DEBUG
-          #-forwarding
+        args: #["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongo-db",
+              #"-logLevel", "DEBUG"]
+            - -corsOrigin
+            - __ALL
+            - -dbhost
+            - mongo-db
+            - -logLevel
+            - DEBUG
+            - -forwarding
           
-        image: "fiware/orion-ld:0.8.0"
+         image: "fiware/orion-ld:0.8.0"
 #          livenessProbe:
 #            exec:
 #              command:
