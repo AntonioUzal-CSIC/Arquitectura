@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app: mongodb
-  name: mongodb
+  name: mongo-pvc
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 100Mi
+      storage: 10Gi
 status: {}
