@@ -27,7 +27,7 @@ spec:
             - DEBUG
             - -forwarding
             
-          image: 'fiware/orion-ld'
+          image: 'fiware/orion-ld:0.8.0'
           imagePullPolicy: IfNotPresent
           
 #          livenessProbe:
