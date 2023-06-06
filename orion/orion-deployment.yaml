@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - command: ["orionld"]
-        args: ["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongodb",
+        args: ["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongo-db",
                "-logLevel", "DEBUG"]
         image: "fiware/orion-ld:0.8.0"
         imagePullPolicy: IfNotPresent
