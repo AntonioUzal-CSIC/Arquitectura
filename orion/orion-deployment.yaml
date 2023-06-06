@@ -18,20 +18,24 @@ spec:
         app: orion
     spec:
       containers:
-        - args:
-            - -corsOrigin
-            - __ALL
-            - -dbhost
-            - mongo-db
-            - -logLevel
-            - DEBUG
-            - -forwarding
-          image: 'fiware/orion-ld'
+      - command: ["orionld"]
+         args: ["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongodb",
+               "-logLevel", "DEBUG"]
+          #  - -corsOrigin
+          # - __ALL
+          # - -dbhost
+          # - mongo-db
+          #- -logLevel
+          # DEBUG
+          #-forwarding
+          
+          image: 'fiware/orion-ld:0.8.0'
 #          livenessProbe:
 #            exec:
 #              command:
 #                - curl --fail -s http://orion:/version || exit 1
 #            periodSeconds: 5
+          imagePullPolicy: IfNotPresent
           name: fiware-orion
           ports:
             - containerPort: 1026
