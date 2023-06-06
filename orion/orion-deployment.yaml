@@ -30,13 +30,13 @@ spec:
           #["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongo-db",
               #"-logLevel", "DEBUG"]
           
-         image: "fiware/orion-ld:0.8.0"
+          image: "fiware/orion-ld:0.8.0"
 #          livenessProbe:
 #            exec:
 #              command:
 #                - curl --fail -s http://orion:/version || exit 1
 #            periodSeconds: 5
-        imagePullPolicy: IfNotPresent
+          imagePullPolicy: IfNotPresent
         name: fiware-orion
         ports:
           - containerPort: 1026
