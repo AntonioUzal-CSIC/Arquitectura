@@ -19,7 +19,11 @@ spec:
         app: mongo-db
     spec:
       containers:
-        - image: 'mongo'
+      - command:
+        - mongod
+        - "--bind_ip_all"
+        - image: 'mongo:4:4
+          imagePullPolicy: IfNotPresent'
 #          livenessProbe:
 #            exec:
 #              command:
