@@ -31,8 +31,8 @@ spec:
           #["-fg", "-multiservice", "-ngsiv1Autocast", "-dbhost", "mongo-db",
               #"-logLevel", "DEBUG"]
           
-          image: 'fiware/orion-ld:0.8.0'
-          imagePullPolicy: IfNotPresent
+            image: 'fiware/orion-ld:0.8.0'
+            imagePullPolicy: IfNotPresent
           
 #          livenessProbe:
 #            exec:
