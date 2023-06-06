@@ -18,7 +18,8 @@ spec:
         app: orion
     spec:
       containers:
-        - args:
+        - command: ["orionld"]
+          args:
             - -corsOrigin
             - __ALL
             - -dbhost
@@ -31,12 +32,14 @@ spec:
               #"-logLevel", "DEBUG"]
           
           image: 'fiware/orion-ld:0.8.0'
+          imagePullPolicy: IfNotPresent
+          
 #          livenessProbe:
 #            exec:
 #              command:
 #                - curl --fail -s http://orion:/version || exit 1
 #            periodSeconds: 5
-          imagePullPolicy: IfNotPresent
+
         name: fiware-orion
         ports:
           - containerPort: 1026
