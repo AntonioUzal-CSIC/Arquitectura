@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: ShopFloorRoughnator
-  name: ShopFloorRoughnator
+    app: shopfloorRoughnator
+  name: shopfloorRoughnator
 spec:
   ports:
     - name: "4002"
