@@ -11,6 +11,6 @@ spec:
       port: 4002
       targetPort: 3000
   selector:
-    app: grafana
+    app: roughnator
 status:
   loadBalancer: {}
