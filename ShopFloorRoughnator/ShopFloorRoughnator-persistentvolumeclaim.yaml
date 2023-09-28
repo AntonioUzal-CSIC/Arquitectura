@@ -3,8 +3,8 @@ kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    app: shopfloorRoughnator
-  name: shopfloorRoughnator
+    app: roughnator
+  name: roughnator
   accessModes:
     - ReadWriteOnce
   resources:
