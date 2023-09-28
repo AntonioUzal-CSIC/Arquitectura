@@ -3,36 +3,36 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: roughnator
-  name: roughnator
+    app: Reconfigurator
+  name: Reconfigurator
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: roughnator
+      app: Reconfigurator
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: roughnator
+        app: Reconfigurator
     spec:
       containers:
         - env:
             - name: GF_INSTALL_PLUGINS
               value: https://github.com/orchestracities/grafana-map-plugin/archive/master.zip;grafana-map-plugin,grafana-clock-panel,grafana-worldmap-panel
           image: grafana/grafana:7.5.5
-          name: roughnator
+          name: Reconfigurator
           ports:
             - containerPort: 4002
           resources: {}
           volumeMounts:
-            - mountPath: roughnator
-              name: roughnator
+            - mountPath: Reconfigurator
+              name: Reconfigurator
       restartPolicy: Always
       volumes:
-        - name: roughnator
+        - name: Reconfigurator
           persistentVolumeClaim:
-            claimName: roughnator
+            claimName: Reconfigurator
 status: {}
