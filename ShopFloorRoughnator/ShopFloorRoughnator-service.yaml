@@ -3,14 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: Reconfigurator
-  name: Reconfigurator
+    app: reconfigurator
+  name: reconfigurator
 spec:
   ports:
     - name: "4002"
       port: 4002
       targetPort: 3000
   selector:
-    app: Reconfigurator
+    app: reconfigurator
 status:
   loadBalancer: {}
