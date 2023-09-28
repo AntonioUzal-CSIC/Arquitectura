@@ -3,36 +3,36 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: ShopFloorRoughnator
-  name: ShopFloorRoughnator
+    app: shopfloorRoughnator
+  name: shopfloorRoughnator
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ShopFloorRoughnator
+      app: shopfloorRoughnator
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: ShopFloorRoughnator
+        app: shopfloorRoughnator
     spec:
       containers:
         - env:
             - name: GF_INSTALL_PLUGINS
               value: https://github.com/orchestracities/grafana-map-plugin/archive/master.zip;grafana-map-plugin,grafana-clock-panel,grafana-worldmap-panel
           image: grafana/grafana:7.5.5
-          name: ShopFloorRoughnator
+          name: shopfloorRoughnator
           ports:
             - containerPort: 4002
           resources: {}
           volumeMounts:
-            - mountPath: ShopFloorRoughnator
-              name: ShopFloorRoughnator
+            - mountPath: shopfloorRoughnator
+              name: shopfloorRoughnator
       restartPolicy: Always
       volumes:
-        - name: ShopFloorRoughnator
+        - name: shopfloorRoughnator
           persistentVolumeClaim:
-            claimName: ShopFloorRoughnator
+            claimName: shopfloorRoughnator
 status: {}
