@@ -5,6 +5,7 @@ metadata:
   labels:
     app: roughnator
   name: roughnator
+spec:
   accessModes:
     - ReadWriteOnce
   resources:
