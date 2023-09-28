@@ -3,14 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: roughnator
-  name: roughnator
+    app: Reconfigurator
+  name: Reconfigurator
 spec:
   ports:
     - name: "4002"
       port: 4002
       targetPort: 3000
   selector:
-    app: roughnator
+    app: Reconfigurator
 status:
   loadBalancer: {}
