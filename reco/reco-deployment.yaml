@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    app: reco
+  name: reco
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reco
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: reco
+    spec:
+      containers:
+        - image: reco
+          imagePullPolicy: IfNotPresent
+          name: reconfigurator
+          ports:
+            - containerPort: 8050
+              hostPort: 8050
+              protocol: TCP
+          resources: {}
+      hostname: reco
+      restartPolicy: Always
+status: {}
