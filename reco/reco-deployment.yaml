@@ -21,7 +21,7 @@ spec:
       containers:
         - env:
           - name: ORION_URL
-            value: http://kitt4sme.collab-cloud.eu/orion
+              value: http://kitt4sme.collab-cloud.eu/orion
           - image: reco
             imagePullPolicy: IfNotPresent
             name: reconfigurator
