@@ -19,14 +19,17 @@ spec:
         app: reco
     spec:
       containers:
-        - image: reco
-          imagePullPolicy: IfNotPresent
-          name: reconfigurator
-          ports:
-            - containerPort: 8050
-              hostPort: 8050
-              protocol: TCP
-          resources: {}
-      hostname: reco
-      restartPolicy: Always
+        - env:
+            - name: ORION_URL
+              value: http://kitt4sme.collab-cloud.eu/orion
+          - image: reco
+            imagePullPolicy: IfNotPresent
+            name: reconfigurator
+            ports:
+              - containerPort: 8050
+                hostPort: 8050
+                protocol: TCP
+            resources: {}
+        hostname: reco
+        restartPolicy: Always
 status: {}
