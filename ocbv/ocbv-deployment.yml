@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: ocbv
+  name: ocbv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ocbv
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ocbv
+    spec:
+      containers:
+      - image: registry.gitlab.com/r2mdev/k4s-cd-aiqus/k4s-ocb-viewer
+        name: ocbv
+        imagePullPolicy: Always
+        env:
+        - name: ORION_BROKER
+          value: http://orion.default.svc:1026
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+        - name: regcred
+ 

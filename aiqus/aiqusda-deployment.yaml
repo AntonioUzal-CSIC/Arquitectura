@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: aiqusda
+  name: aiqusda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: aiqusda
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: aiqusda
+    spec:
+      containers:
+      - image: registry.gitlab.com/r2mdev/k4s-cd-aiqus/k4s-aiqus-da
+        name: aiqusda
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: "/opt/data/"
+          name: aiqusda-storage
+        ports:
+        - containerPort: 8000
+        env:
+        - name: PORT
+          value: "8000"
+        - name: ORION_BROKER
+          value: http://orion.default.svc:1026
+      volumes:
+        - name: aiqusda-storage
+          hostPath:
+            path: /opt/shared/data/
+      imagePullSecrets:
+        - name: regcred 
